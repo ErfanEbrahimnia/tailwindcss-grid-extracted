@@ -69,7 +69,12 @@ async function generateCSSFile(
     tailwind({ content: [{ raw: css, extension: "css" }] }),
   ]).process(`@tailwind utilities;`, { from: undefined });
 
-  const outPath = join(dirname(fileURLToPath(import.meta.url)), fileName);
+  const outPath = join(
+    dirname(fileURLToPath(import.meta.url)),
+    "..",
+    "styles",
+    fileName
+  );
 
   writeFileSync(outPath, result.css, "utf8");
 }
