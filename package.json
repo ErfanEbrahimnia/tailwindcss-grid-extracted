@@ -7,8 +7,7 @@
   "author": "Erfan Ebrahimnia <erfan@nextjsweekly.com>",
   "scripts": {
     "dev": "vite",
-    "generate-css": "pnpx tsx scripts/generate-css.ts",
-    "prepublishOnly": "pnpm generate-css"
+    "generate-css": "pnpx tsx scripts/generate-css.ts"
   },
   "dependencies": {},
   "devDependencies": {
