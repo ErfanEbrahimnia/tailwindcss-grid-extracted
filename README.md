@@ -17,11 +17,11 @@ This package provides:
 
 Approximate bundle sizes (unminified, pre-gzip):
 
-| File               | Size   | Contents                                    |
-| ------------------ | ------ | ------------------------------------------- |
-| `styles/index.css` | ~15 KB | Flex + grid + shared alignment utilities    |
-| `styles/flex.css`  | ~6 KB  | Flex utilities + shared alignment utilities |
-| `styles/grid.css`  | ~12 KB | Grid utilities + shared alignment utilities |
+| File              | Size   | Contents                                    |
+| ----------------- | ------ | ------------------------------------------- |
+| `styles/full.css` | ~15 KB | Flex + grid + shared alignment utilities    |
+| `styles/flex.css` | ~6 KB  | Flex utilities + shared alignment utilities |
+| `styles/grid.css` | ~12 KB | Grid utilities + shared alignment utilities |
 
 ## Installation
 
@@ -46,28 +46,36 @@ Import one of the CSS bundles into your application. The package entry point (`m
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/tailwindcss-grid-extracted/styles/index.css"
+  href="node_modules/tailwindcss-grid-extracted/styles/full.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="node_modules/tailwindcss-grid-extracted/styles/flex.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="node_modules/tailwindcss-grid-extracted/styles/grid.css"
 />
 ```
 
 ### JavaScript / TypeScript bundlers
 
-```js
-import "tailwindcss-grid-extracted/styles/index.css";
-```
-
 Import only what you need:
 
 ```js
-import "tailwindcss-grid-extracted/styles/flex.css";
-import "tailwindcss-grid-extracted/styles/grid.css";
+import "tailwindcss-grid-extracted/full.css";
+import "tailwindcss-grid-extracted/flex.css";
+import "tailwindcss-grid-extracted/grid.css";
 ```
 
 ### In CSS
 
 ```css
-@import "tailwindcss-grid-extracted/styles/flex.css";
-@import "tailwindcss-grid-extracted/styles/grid.css";
+@import "tailwindcss-grid-extracted/full.css";
+@import "tailwindcss-grid-extracted/flex.css";
+@import "tailwindcss-grid-extracted/grid.css";
 ```
 
 Then use utility classes as you would with Tailwind:
@@ -88,7 +96,7 @@ Then use utility classes as you would with Tailwind:
 
 Three files are published under `styles/`:
 
-### `styles/index.css` (default)
+### `styles/full.css`
 
 The complete set: flex utilities, grid utilities, and shared layout helpers. Use this when you need both layout modes.
 
@@ -120,7 +128,7 @@ CSS is generated at publish time by `scripts/generate-css.ts`. The script:
 
 1. Defines an explicit allowlist of Tailwind utility class names
 2. Feeds them to Tailwind CSS v3 via PostCSS using a synthetic `@apply` block
-3. Writes compiled, standalone CSS to `styles/flex.css`, `styles/grid.css`, and `styles/index.css`
+3. Writes compiled, standalone CSS to `styles/flex.css`, `styles/grid.css`, and `styles/full.css`
 
 The output is plain CSS with no `@tailwind` directives and no dependency on Tailwind at runtime. Class names and property values are identical to what Tailwind v3 would produce for the same utilities.
 

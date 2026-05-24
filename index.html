@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tailwindcss-grid-extracted — layout tests</title>
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/full.css" />
     <style>
       :root {
         font-family: system-ui, sans-serif;
@@ -112,7 +112,7 @@
     <h1>Layout utility tests</h1>
     <p class="intro">
       Visual checks for extracted Tailwind layout utilities. Cells use plain CSS
-      so only classes from <code>styles/index.css</code> affect layout.
+      so only classes from <code>styles/full.css</code> affect layout.
     </p>
 
     <h2 class="group-title">Grid utilities</h2>
@@ -191,7 +191,8 @@
     <section>
       <h2>5. Row line placement</h2>
       <p>
-        <code>row-start-1 row-end-3</code> — item spans rows 1–2 on a 3-row grid.
+        <code>row-start-1 row-end-3</code> — item spans rows 1–2 on a 3-row
+        grid.
       </p>
       <div class="demo grid grid-cols-3 grid-rows-3 gap-2 tall-demo">
         <div class="cell row-start-1 row-end-3 highlight">rows 1–2</div>
@@ -260,8 +261,8 @@
     <section>
       <h2>9. Dense packing</h2>
       <p>
-        <code>grid-flow-row-dense</code> with mixed spans — smaller items backfill
-        holes left by large spans.
+        <code>grid-flow-row-dense</code> with mixed spans — smaller items
+        backfill holes left by large spans.
       </p>
       <div class="demo grid grid-cols-4 grid-flow-row-dense gap-2">
         <div class="cell col-span-2 row-span-2">2×2</div>
@@ -277,9 +278,9 @@
     <section>
       <h2>10. Auto column sizing</h2>
       <p>
-        <code>grid-flow-col auto-cols-fr</code> — implicit columns share free space
-        (<code>auto-cols-min</code> / <code>max</code> / <code>auto</code> also
-        generated).
+        <code>grid-flow-col auto-cols-fr</code> — implicit columns share free
+        space (<code>auto-cols-min</code> / <code>max</code> /
+        <code>auto</code> also generated).
       </p>
       <div class="demo grid grid-flow-col auto-cols-fr gap-2 wide-demo">
         <div class="cell">fr</div>
@@ -364,8 +365,8 @@
     <section>
       <h2>15. Align content</h2>
       <p>
-        <code>content-center</code> — packs row tracks along the block axis inside
-        a tall container.
+        <code>content-center</code> — packs row tracks along the block axis
+        inside a tall container.
       </p>
       <div
         class="demo grid grid-cols-2 gap-2 content-center tall-demo"
@@ -399,14 +400,17 @@
     <section>
       <h2>17. Align self</h2>
       <p>
-        <code>self-start</code> on one cell in an <code>items-stretch</code> grid
-        — single-item override on the block axis.
+        <code>self-start</code> on one cell in an
+        <code>items-stretch</code> grid — single-item override on the block
+        axis.
       </p>
       <div
         class="demo grid grid-cols-3 gap-2 items-stretch"
         style="min-height: 6rem"
       >
-        <div class="cell self-start highlight" style="height: 2.5rem">self-start</div>
+        <div class="cell self-start highlight" style="height: 2.5rem">
+          self-start
+        </div>
         <div class="cell">stretch</div>
         <div class="cell">stretch</div>
       </div>
@@ -416,8 +420,8 @@
     <section>
       <h2>18. Place shorthand</h2>
       <p>
-        <code>place-content-center place-items-center</code> — sets both align and
-        justify content/items in one class each.
+        <code>place-content-center place-items-center</code> — sets both align
+        and justify content/items in one class each.
       </p>
       <div
         class="demo grid grid-cols-2 gap-2 place-content-center place-items-center tall-demo"
@@ -439,7 +443,10 @@
         class="demo grid grid-cols-3 gap-2 place-items-start"
         style="min-height: 6rem"
       >
-        <div class="cell place-self-end highlight" style="width: 3.5rem; height: 2.5rem">
+        <div
+          class="cell place-self-end highlight"
+          style="width: 3.5rem; height: 2.5rem"
+        >
           place-self-end
         </div>
         <div class="cell" style="width: 3.5rem">·</div>
@@ -451,7 +458,8 @@
     <section>
       <h2>20. Visual order</h2>
       <p>
-        <code>order-last</code>, <code>order-first</code>, and <code>order-2</code>
+        <code>order-last</code>, <code>order-first</code>, and
+        <code>order-2</code>
         — reorder items without changing DOM order (DOM: 1, 2, 3).
       </p>
       <div class="demo grid grid-cols-3 gap-2">
@@ -465,10 +473,11 @@
     <section>
       <h2>21. Template none &amp; subgrid</h2>
       <p>
-        <code>grid-cols-none</code> removes explicit columns (implicit auto grid).
-        <code>grid-cols-subgrid</code> / <code>grid-rows-subgrid</code> require a
-        nested grid inside a subgrid parent — classes are generated; test in a
-        nested layout when you use subgrid.
+        <code>grid-cols-none</code> removes explicit columns (implicit auto
+        grid). <code>grid-cols-subgrid</code> /
+        <code>grid-rows-subgrid</code> require a nested grid inside a subgrid
+        parent — classes are generated; test in a nested layout when you use
+        subgrid.
       </p>
       <div class="demo grid grid-cols-none gap-2">
         <div class="cell">implicit</div>
@@ -518,7 +527,10 @@
         <code>flex-row-reverse</code> and <code>flex-col-reverse</code> flip
         main-axis order (DOM order unchanged).
       </p>
-      <div class="demo flex flex-row-reverse gap-2" style="margin-bottom: 0.75rem">
+      <div
+        class="demo flex flex-row-reverse gap-2"
+        style="margin-bottom: 0.75rem"
+      >
         <div class="cell flex-item">1</div>
         <div class="cell flex-item">2</div>
         <div class="cell flex-item">3</div>
@@ -618,7 +630,9 @@
       </p>
       <div class="demo flex gap-2 narrow">
         <div class="cell flex-item shrink" style="min-width: 6rem">shrink</div>
-        <div class="cell flex-item flex-none" style="min-width: 6rem">flex-none</div>
+        <div class="cell flex-item flex-none" style="min-width: 6rem">
+          flex-none
+        </div>
       </div>
     </section>
 
@@ -657,7 +671,10 @@
         <code>justify-between</code> and <code>justify-center</code> distribute
         items along the main axis.
       </p>
-      <div class="demo flex justify-between gap-2" style="margin-bottom: 0.75rem; max-width: 24rem">
+      <div
+        class="demo flex justify-between gap-2"
+        style="margin-bottom: 0.75rem; max-width: 24rem"
+      >
         <div class="cell flex-item">A</div>
         <div class="cell flex-item">B</div>
         <div class="cell flex-item">C</div>
@@ -680,12 +697,16 @@
         style="margin-bottom: 0.75rem; min-height: 6rem"
       >
         <div class="cell flex-item" style="height: 2rem">short</div>
-        <div class="cell flex-item highlight" style="height: 4rem">items-center</div>
+        <div class="cell flex-item highlight" style="height: 4rem">
+          items-center
+        </div>
         <div class="cell flex-item" style="height: 2.5rem">mid</div>
       </div>
       <div class="demo flex items-end gap-2" style="min-height: 6rem">
         <div class="cell flex-item" style="height: 2rem">short</div>
-        <div class="cell flex-item highlight" style="height: 4rem">items-end</div>
+        <div class="cell flex-item highlight" style="height: 4rem">
+          items-end
+        </div>
         <div class="cell flex-item" style="height: 2.5rem">mid</div>
       </div>
     </section>
@@ -769,7 +790,10 @@
         you know the class exists in <code>flex.css</code>.
       </p>
       <div class="demo flex gap-2 justify-start" style="min-height: 4rem">
-        <div class="cell flex-item justify-self-end highlight" style="width: 5rem">
+        <div
+          class="cell flex-item justify-self-end highlight"
+          style="width: 5rem"
+        >
           justify-self-end
         </div>
         <div class="cell flex-item" style="width: 5rem">default</div>

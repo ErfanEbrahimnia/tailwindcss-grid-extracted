@@ -44,7 +44,7 @@ async function main() {
   await Promise.all([
     generateCSSFile([...baseCSS, ...flexCSS], "flex.css"),
     generateCSSFile([...baseCSS, ...gridCSS], "grid.css"),
-    generateCSSFile([...baseCSS, ...flexCSS, ...gridCSS], "index.css"),
+    generateCSSFile([...baseCSS, ...flexCSS, ...gridCSS], "full.css"),
   ]);
 }
 
