@@ -21,6 +21,11 @@
     "vite": "^8.0.12"
   },
   "main": "styles/index.css",
+  "exports": {
+    ".": "./styles/index.css",
+    "./flex.css": "./styles/flex.css",
+    "./grid.css": "./styles/grid.css"
+  },
   "files": [
     "LICENSE",
     "README.md",
