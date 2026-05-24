@@ -17,8 +17,6 @@ async function main() {
   ];
 
   const flexCSS = [
-    ...baseCSS,
-
     "flex",
     ...flexBasisClasses,
     ...flexDirectionClasses,
@@ -29,8 +27,6 @@ async function main() {
   ] as const;
 
   const gridCSS = [
-    ...baseCSS,
-
     "grid",
     ...gridTemplateColumnsClasses,
     ...gridColumnClasses,
@@ -46,9 +42,9 @@ async function main() {
   ] as const;
 
   await Promise.all([
-    generateCSSFile(baseCSS, "base.css"),
-    generateCSSFile(flexCSS, "flex.css"),
-    generateCSSFile(gridCSS, "grid.css"),
+    generateCSSFile([...baseCSS, ...flexCSS], "flex.css"),
+    generateCSSFile([...baseCSS, ...gridCSS], "grid.css"),
+    generateCSSFile([...baseCSS, ...flexCSS, ...gridCSS], "index.css"),
   ]);
 }
 
