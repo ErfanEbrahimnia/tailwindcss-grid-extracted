@@ -4,6 +4,10 @@
   "description": "Extracted grid and flex utilities from Tailwind CSS. Useful for projects that need to use Tailwind grid and flex utilities but don't want to include the entire library.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erfanebrahimnia/tailwindcss-grid-extracted"
+  },
   "author": "Erfan Ebrahimnia <erfan@nextjsweekly.com>",
   "scripts": {
     "dev": "vite",
