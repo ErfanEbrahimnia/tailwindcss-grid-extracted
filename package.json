@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-grid-extracted",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Extracted grid and flex utilities from Tailwind CSS. Useful for projects that need to use Tailwind grid and flex utilities but don't want to include the entire library.",
   "type": "module",
   "license": "MIT",
